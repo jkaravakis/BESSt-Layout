@@ -34,7 +34,7 @@ export const Megapack2 = () => {
                         </List>
                     </div>
                     <QuantityContainer>
-                            <Input name="megapack2Qty" label="Quantity" validateOn='change' validateOnMount  defaultValue={0} trailing="units" type='number' />
+                            <Input name="megapack2" label="Quantity" validateOn='change' validateOnMount  defaultValue={0} trailing="units" type='number' />
                     </QuantityContainer>
                 </CardContents>
             </Card>

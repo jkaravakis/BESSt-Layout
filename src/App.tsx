@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Header } from './components/Header';
 import { Inputs } from './components/Inputs';
+import { Form } from '@tesla/informed-tds';
 import { KeyMetrics } from './components/Project';
 import '@tesla/design-system/dist/index.css';
 import './App.css';
@@ -23,10 +24,12 @@ function App() {
   return (
     <AppContainer>
       <Header />
+      <Form>
       <ContentContainer>
         <Inputs />
         <KeyMetrics footprint={10} price={2} energyDensity={3} />
       </ContentContainer>
+      </Form>
     </AppContainer>
   );
 }

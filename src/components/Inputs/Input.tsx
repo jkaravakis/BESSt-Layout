@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Form } from '@tesla/informed-tds';
 import { MegapackXL, Megapack2, Megapack, Powerpack } from './Products';
 
 const InputsContainer = styled.div`
@@ -18,14 +17,10 @@ export const Inputs = () => {
 
     return (
         <InputsContainer>
-            <InputContainer>
-                <Form>
-                    <MegapackXL />
-                    <Megapack2 />
-                    <Megapack />
-                    <Powerpack />
-                </Form>
-            </InputContainer>
+            <MegapackXL />
+            <Megapack2 />
+            <Megapack />
+            <Powerpack />
         </InputsContainer>
     )
 }
