@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Text } from '@tesla/design-system-react';
 import { useFormState } from 'informed';
+import { calculateCost, numberWithCommas } from '../../functions';
 
 interface KeyMetricsProps {
     footprint: number;
@@ -44,12 +45,14 @@ export const KeyMetrics = ({footprint, price, energyDensity}: KeyMetricsProps) =
     const powerpack = typeof formState.values.powerpack ==='number' ? formState.values.powerpack : 0;
     const total = megapack + megapack2 + megapackXL + powerpack;
 
-    const transformers = Math.floor(total/2) + (total % 2);
+    const transformer = Math.floor(total/2) + (total % 2);
+
+    const totalCost = calculateCost({megapackXL, megapack2, megapack, powerpack, transformer});
 
     return (
         <KeyMetricsBar>
             <KeyMetric>
-                <MetricValue>${footprint}</MetricValue>
+                <MetricValue>${numberWithCommas(totalCost)}</MetricValue>
                 <Text>Total Cost</Text>
             </KeyMetric>
             <KeyMetric>

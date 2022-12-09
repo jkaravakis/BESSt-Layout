@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Input } from '@tesla/informed-tds';
 import { Card, List, ListItem, FormLabel } from '@tesla/design-system-react';
-import { products, numberWithCommas } from './products';
+import { products } from './products';
+import { numberWithCommas } from '../../../functions';
 
 const CardContainer = styled.div`
     display: flex;
