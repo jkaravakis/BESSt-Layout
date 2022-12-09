@@ -27,7 +27,7 @@ function App() {
       <Form>
       <ContentContainer>
         <Inputs />
-        <KeyMetrics footprint={10} price={2} energyDensity={3} />
+        <KeyMetrics />
       </ContentContainer>
       </Form>
     </AppContainer>

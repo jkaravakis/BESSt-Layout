@@ -19,3 +19,27 @@ export const calculateCost = ({megapackXL, megapack2, megapack, powerpack, trans
 
     return totalCost;
 }
+
+export const calculateFootprint = ({megapackXL, megapack2, megapack, powerpack, transformer}: ProductProps) => {
+    const megapackXLSize = megapackXL * products.megapackXL.size[0] * products.megapackXL.size[1];
+    const megapack2Size = megapack2 * products.megapack2.size[0] * products.megapack2.size[1];
+    const megapackSize = megapack * products.megapack.size[0] * products.megapack.size[1];
+    const powerpackSize = powerpack * products.powerpack.size[0] * products.powerpack.size[1];
+    const transformerSize = transformer * products.transformer.size[0] * products.transformer.size[1];
+
+    const totalSize = megapackXLSize + megapack2Size + megapackSize + powerpackSize + transformerSize;
+
+    return totalSize;
+}
+
+export const calculateEnergy = ({megapackXL, megapack2, megapack, powerpack, transformer}: ProductProps) => {
+    const megapackXLEnergy = megapackXL * products.megapackXL.energy;
+    const megapack2Energy = megapack2 * products.megapack2.energy;
+    const megapackEnergy = megapack * products.megapack.energy;
+    const powerpackEnergy = powerpack * products.powerpack.energy;
+    const transformerEnergy = transformer * products.transformer.energy;
+
+    const totalEnergy = megapackXLEnergy + megapack2Energy + megapackEnergy + powerpackEnergy + transformerEnergy;
+
+    return totalEnergy;
+}
