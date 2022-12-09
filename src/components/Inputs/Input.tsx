@@ -4,14 +4,12 @@ import { MegapackXL, Megapack2, Megapack, Powerpack } from './Products';
 
 const InputsContainer = styled.div`
     display: flex;
-    flex: 1;
+    flex-shrink: 1;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 40px;
 `;
 
 const InputContainer = styled.div`
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
 `;
