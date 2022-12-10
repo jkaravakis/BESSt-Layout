@@ -18,6 +18,80 @@ export const calculateCost = ({megapackXL, megapack2, megapack, powerpack, trans
     const totalCost = megapackXLCost + megapack2Cost + megapackCost + powerpackCost + transformerCost;
 
     return totalCost;
+}  
+
+export const minRemainingSize = (megapackXL: number, megapack2: number, megapack: number, powerpack: number, transformer: number) => {
+    const remainingSizes = []
+
+    if (megapackXL > 0) {
+        remainingSizes.push(4)
+    }
+
+    if (megapack2 > 0) {
+        remainingSizes.push(3)
+    }
+
+    if (megapack > 0) {
+        remainingSizes.push(3)
+    }
+
+    if (powerpack > 0) {
+        remainingSizes.push(1)
+    }
+
+    if (transformer > 0) {
+        remainingSizes.push(1)
+    }
+
+    if (remainingSizes.length === 0) {
+        return 0
+    } else {
+        return Math.min(...remainingSizes)
+    }
+}
+
+export const calculateLayout = ({megapackXL, megapack2, megapack, powerpack, transformer}: ProductProps) => {
+    let totalUnits = megapackXL + megapack2 + megapack + powerpack + transformer;
+    let currentRow = [];
+    let layout = [];
+
+    while (totalUnits > 0) {
+        if ((10 - currentRow.length) >= minRemainingSize(megapackXL, megapack2, megapack, powerpack, transformer)) {
+            if (megapackXL > 0 && currentRow.length + 4 <= 10) {
+                currentRow.push(...[1, 1, 1, 1])
+                megapackXL -= 1
+                totalUnits -= 1
+            }
+            else if (megapack2 > 0 && currentRow.length + 3 <= 10) {
+                currentRow.push(...[2, 2, 2])
+                megapack2 -= 1
+                totalUnits -= 1
+            }
+            else if (megapack > 0 && currentRow.length + 3 <= 10) {
+                currentRow.push(...[3, 3, 3])
+                megapack -= 1
+                totalUnits -= 1
+            }
+            else if (powerpack > 0 && currentRow.length + 1 <= 10) {
+                currentRow.push(...[4])
+                powerpack -= 1
+                totalUnits -= 1
+            }
+            else if (transformer > 0 && currentRow.length + 1 <= 10) {
+                currentRow.push(...[5])
+                transformer -= 1
+                totalUnits -= 1
+            }
+        } 
+        else {
+            layout.push(currentRow)
+            currentRow = []
+        }
+    }
+    
+    layout.push(currentRow)
+
+    return layout;
 }
 
 export const calculateFootprint = ({megapackXL, megapack2, megapack, powerpack, transformer}: ProductProps) => {
@@ -29,7 +103,7 @@ export const calculateFootprint = ({megapackXL, megapack2, megapack, powerpack, 
 
     const totalSize = megapackXLSize + megapack2Size + megapackSize + powerpackSize + transformerSize;
 
-    return totalSize;
+    return totalSize
 }
 
 export const calculateEnergy = ({megapackXL, megapack2, megapack, powerpack, transformer}: ProductProps) => {

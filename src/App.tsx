@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Header } from './components/Header';
 import { Inputs } from './components/Inputs';
 import { Form } from '@tesla/informed-tds';
-import { KeyMetrics } from './components/Project';
+import { KeyMetrics, Layout } from './components/Project';
 import '@tesla/design-system/dist/index.css';
 import './App.css';
 
@@ -20,6 +20,14 @@ const ContentContainer = styled.div`
   margin-right: 40px;
 `
 
+const SiteContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 50px;
+  max-height: 500px;
+`
+
 function App() {
   return (
     <AppContainer>
@@ -27,7 +35,10 @@ function App() {
       <Form>
       <ContentContainer>
         <Inputs />
-        <KeyMetrics />
+        <SiteContainer>
+          <KeyMetrics />
+          <Layout />
+        </SiteContainer>
       </ContentContainer>
       </Form>
     </AppContainer>
