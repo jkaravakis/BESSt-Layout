@@ -84,9 +84,16 @@ export const calculateLayout = ({megapackXL, megapack2, megapack, powerpack, tra
             }
         } 
         else {
+            while (currentRow.length < 10) {
+                currentRow.push(...[6]);
+            }
             layout.push(currentRow)
             currentRow = []
         }
+    }
+    
+    while (currentRow.length < 10) {
+        currentRow.push(...[6]);
     }
     
     layout.push(currentRow)

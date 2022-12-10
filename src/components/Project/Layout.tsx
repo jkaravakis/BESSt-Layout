@@ -6,7 +6,7 @@ const RowContainer = styled.div`
     display: flex;
     flex: 1;
     height: 100px;
-    //gap: 10px;
+    gap: 10px;
 `
 
 const SiteLayoutContainer = styled.div`
@@ -19,7 +19,7 @@ const SiteLayoutContainer = styled.div`
 
 const MegapackLayout = styled.div`
     display: flex;
-    flex: 3;
+    flex: 1;
     background-color: #3E6AE1;
     border-color: black;
     border: 10px;
@@ -27,7 +27,7 @@ const MegapackLayout = styled.div`
 
 const Megapack2Layout = styled.div`
     display: flex;
-    flex: 3;
+    flex: 1;
     background-color: #FBB01B;
     border-color: black;
     border-width: 10px;
@@ -35,7 +35,7 @@ const Megapack2Layout = styled.div`
 
 const MegapackXLLayout = styled.div`
     display: flex;
-    flex: 4;
+    flex: 1;
     background-color: #B74134;
     border-color: black;
     border-width: 10px;
@@ -94,6 +94,8 @@ export const Layout = () => {
                                         return <PowerpackLayout key={i} />
                                     } else if (cell === 5) {
                                         return <TransformerLayout key={i} />
+                                    } else if (cell === 6) {
+                                        return <EmptySpace key={i} />
                                     }
                                 })}
                             </RowContainer>
