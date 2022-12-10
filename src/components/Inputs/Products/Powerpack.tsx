@@ -1,26 +1,9 @@
-import styled from 'styled-components';
 import { Input } from '@tesla/informed-tds';
-import { Card, List, ListItem, FormLabel } from '@tesla/design-system-react';
+import { Card, List, ListItem, FormLabel, Icon } from '@tesla/design-system-react';
+import { iconBatteryFilled } from '@tesla/design-system-icons';
 import { products } from './products';
 import { numberWithCommas } from '../../../functions';
-
-
-const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-`;
-
-const CardContents = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const QuantityContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
-`
+import { CardContainer, CardContents, QuantityContainer, LabelContainer } from './styles';
 
 export const Powerpack = () => {
     return (
@@ -28,7 +11,10 @@ export const Powerpack = () => {
             <Card>
                 <CardContents>
                     <div>
-                        <FormLabel>{products.powerpack.name}</FormLabel>
+                        <LabelContainer>
+                            <Icon data={iconBatteryFilled} color='#12BB00' />
+                            <FormLabel>{products.powerpack.name}</FormLabel>
+                        </LabelContainer>
                         <List is="ol" variant="unordered">
                             <ListItem>Size: {products.powerpack.size[0]} ft x {products.powerpack.size[1]} ft</ListItem>
                             <ListItem>Capacity: {products.powerpack.energy} MWh</ListItem>

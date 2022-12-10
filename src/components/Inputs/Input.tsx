@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MegapackXL, Megapack2, Megapack, Powerpack } from './Products';
+import { MegapackXL, Megapack2, Megapack, Powerpack, Transformer } from './Products';
 
 const InputsContainer = styled.div`
     display: flex;
@@ -21,6 +21,7 @@ export const Inputs = () => {
             <Megapack2 />
             <Megapack />
             <Powerpack />
+            <Transformer />
         </InputsContainer>
     )
 }

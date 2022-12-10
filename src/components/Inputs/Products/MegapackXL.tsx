@@ -1,25 +1,9 @@
-import styled from 'styled-components';
 import { Input } from '@tesla/informed-tds';
-import { Card, List, ListItem, FormLabel } from '@tesla/design-system-react';
+import { Card, List, ListItem, FormLabel, Icon } from '@tesla/design-system-react';
+import { iconBatteryFilled } from '@tesla/design-system-icons';
 import { products } from './products';
 import { numberWithCommas } from '../../../functions';
-
-const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-`;
-
-const CardContents = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const QuantityContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
-`
+import { CardContainer, CardContents, QuantityContainer, LabelContainer} from './styles';
 
 export const MegapackXL = () => {
     return (
@@ -27,7 +11,10 @@ export const MegapackXL = () => {
             <Card>
                 <CardContents>
                     <div>
-                        <FormLabel>{products.megapackXL.name}</FormLabel>
+                        <LabelContainer>
+                            <Icon data={iconBatteryFilled} color='#B74134' />
+                            <FormLabel>{products.megapackXL.name}</FormLabel>
+                        </LabelContainer>
                         <List is="ol" variant="unordered">
                             <ListItem>Size: {products.megapackXL.size[0]} ft x {products.megapackXL.size[1]} ft</ListItem>
                             <ListItem>Capacity: {products.megapackXL.energy} MWh</ListItem>
@@ -40,7 +27,5 @@ export const MegapackXL = () => {
                 </CardContents>
             </Card>
         </CardContainer>
-
-
     )
 }
