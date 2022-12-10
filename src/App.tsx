@@ -25,7 +25,6 @@ const SiteContainer = styled.div`
   flex: 1;
   flex-direction: column;
   margin-left: 50px;
-  max-height: 500px;
 `
 
 function App() {

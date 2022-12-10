@@ -11,17 +11,17 @@ const RowContainer = styled.div`
 
 const SiteLayoutContainer = styled.div`
     display: flex;
-    flex: 1;
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+    padding: 40px;
+    background-color: #F4F4F4;
 `;
 
 const MegapackLayout = styled.div`
     display: flex;
     flex: 1;
     background-color: #3E6AE1;
-    border-color: black;
     border: 10px;
 `
 
@@ -29,40 +29,30 @@ const Megapack2Layout = styled.div`
     display: flex;
     flex: 1;
     background-color: #FBB01B;
-    border-color: black;
-    border-width: 10px;
 `
 
 const MegapackXLLayout = styled.div`
     display: flex;
     flex: 1;
     background-color: #B74134;
-    border-color: black;
-    border-width: 10px;
 `
 
 const PowerpackLayout = styled.div`
     display: flex;
     flex: 1;
     background-color: #12BB00;
-    border-color: black;
-    border-width: 10px;
 `
 
 const TransformerLayout = styled.div`
     display: flex;
     flex: 1;
     background-color: purple;
-    border-color: black;
-    border-width: 10px;
 `
 
 const EmptySpace = styled.div`
     display: flex;
     flex: 1;
     background-color: grey;
-    border-color: black;
-    border-width: 10px;
 `
 
 export const Layout = () => {

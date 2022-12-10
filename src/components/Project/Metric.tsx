@@ -5,7 +5,6 @@ import { calculateCost, calculateEnergy, calculateFootprint, numberWithCommas, c
 
 const KeyMetricsBar = styled.div`
     display: flex;
-    flex: 1;
     flex-direction: row;
     justify-content: space-evenly;
 `;
