@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/BESSt-Layout/static/css/main.6087b45a.css",
+    "main.js": "/BESSt-Layout/static/js/main.e511048f.js",
+    "static/js/787.3f1dcbfe.chunk.js": "/BESSt-Layout/static/js/787.3f1dcbfe.chunk.js",
+    "index.html": "/BESSt-Layout/index.html",
+    "main.6087b45a.css.map": "/BESSt-Layout/static/css/main.6087b45a.css.map",
+    "main.e511048f.js.map": "/BESSt-Layout/static/js/main.e511048f.js.map",
+    "787.3f1dcbfe.chunk.js.map": "/BESSt-Layout/static/js/787.3f1dcbfe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6087b45a.css",
+    "static/js/main.e511048f.js"
+  ]
+}
