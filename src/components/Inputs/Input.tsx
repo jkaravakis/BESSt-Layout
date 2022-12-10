@@ -5,7 +5,6 @@ const InputsContainer = styled.div`
     display: flex;
     flex-shrink: 1;
     flex-direction: column;
-    //justify-content: space-between;
 `;
 
 export const Inputs = () => {
